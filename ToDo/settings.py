@@ -54,6 +54,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'ToDo.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

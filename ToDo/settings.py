@@ -34,6 +34,7 @@ ALLOWED_HOSTS = ['http://akhiltodo.herokuapp.com/']
 
 INSTALLED_APPS = [
     'app1.apps.App1Config',
+     'crispy_forms',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,5 +125,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 django_heroku.settings(locals())
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 

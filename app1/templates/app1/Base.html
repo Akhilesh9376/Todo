@@ -4,7 +4,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>home</title>
     {% load static %}
 
     <link
@@ -14,10 +14,49 @@
       crossorigin="anonymous"
     />
   </head>
-  <body style="background-color:#00d4ff;">
+  <body>
+  <nav class="sticky-top navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">To-Do</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+<ul class="navbar-nav mr-auto">
+<li class="nav-item active">
+        <a class="nav-link" href="{% url 'Home' %}">Home <span class="sr-only">(current)</span></a>
+      </li>
+</ul>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ml-auto ">
+      
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Register' %}">Register</a>
+      </li>
+      <li class="nav-item float-left">
+        <a class="nav-link" href="{% url 'Login' %}">Login</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'Contact' %}">Contact</a>
+      </li>
+     
+    </ul>
+    
+  </div>
+</nav>
+{% for message in messages %}
+<div class="alert alert-success" role="alert">
+  {{ message }}
+</div>
+
+{% endfor%}
+
     {% block home %}    {% endblock %}
     {% block delete %}  {% endblock %}
     {% block update %}  {% endblock %}
+    {% block Register %}  {% endblock %}
+    {% block login %}  {% endblock %}
+
+
   </body>
   <script
     src="https://code.jquery.com/jquery-3.5.1.slim.min.js"

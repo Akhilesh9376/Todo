@@ -10,25 +10,16 @@
 </form>
 {% for task in tasks %}
 <div>
- 
-  
     <a class="btn btn-light mr-4 mt-2 btn-outline-warning" href="{% url 'Update' task.id %}">Update</a>
-  
    <a class="btn btn-dark btn-outline-danger mt-2" href="{% url 'delete' task.id %}">Delete</a>
-
-  
   <div class="mr-4 mt-3 mb-3 h3">
   {% if task.complete == True %}
   <strike>{{task}}</strike>
   {% else %}
   <span>{{task}} </span>
   {% endif %}
-
-  
 </div>
-
 </div>
 {% endfor %}
 </div>
-
 {% endblock %}

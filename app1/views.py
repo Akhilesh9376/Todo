@@ -76,4 +76,11 @@ def login_request(request):
     return render(request,'app1/login.html',{'form':form})
 
 def Contact(request):
+    
     return render(request,'app1/Contact.html')
+
+def logout_request(request):
+    logout(request)
+    messages.info(request, "Logged out successfully!")
+    return redirect("/")
+    return render(request,'App1/logout.html')
